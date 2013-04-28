@@ -1,0 +1,21 @@
+name: AntiCuss
+version: 1.5
+main: me.compressions.anticuss.AntiCuss
+author: Compressions
+description: Blocks cuss words!
+
+commands:
+    anticuss:
+        usage: /<command>
+        description: Reloads config!
+
+permissions:
+    anticuss.reload:
+        description: Permission to reload config!
+        default: op
+    anticuss.bypass:
+        description: Permission to bypass cuss word blocking!
+        default: op
+    anticuss.kick:
+        description: Permission to kick player!
+        default: false
