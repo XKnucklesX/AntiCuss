@@ -6,6 +6,7 @@ public class AntiCuss extends JavaPlugin {
 
 	
 	public void onEnable() {
+		this.getLogger().info("AntiCuss enabled!");
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		getServer().getPluginManager().registerEvents(new AntiCussListener(this), this); //error on new AntiCussListener()
