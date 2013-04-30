@@ -31,24 +31,16 @@ public class AntiCussCommandExecutor implements CommandExecutor {
 						plugin.saveConfig();
 						p.sendMessage(ChatColor.GREEN + "Config reloaded!");
 					} if(args.length == 0 && args[0].equalsIgnoreCase("clear")) {
-						if(!p.hasPermission("anticuss.clear")) {
-							p.sendMessage(ChatColor.RED + "Insufficient permissions!");
-						} else {
-							if(p.hasPermission("anticuss.clear")) {
-								p.sendMessage("Debug");
-								for(int msgs = 1; msgs <= 100; msgs++) {
-									p.sendMessage("");
-								}
+						p.sendMessage("debug");
 								
-							}
-						}
-					}
+							
 				}
 			
 			}
+			
+		}		
 		
-		
-		}
+	}
 		return true;
 
 	}
