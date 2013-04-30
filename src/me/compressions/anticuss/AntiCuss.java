@@ -1,16 +1,21 @@
 package me.compressions.anticuss;
 
+import me.compressions.anticuss.commands.AntiCussCommand;
+import me.compressions.anticuss.commands.Clear;
+import me.compressions.anticuss.commands.Reload;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AntiCuss extends JavaPlugin {
 
 	
 	public void onEnable() {
-		this.getLogger().info("AntiCuss is enabled!");
 		getConfig().options().copyDefaults(true);
 		saveConfig();
-		getServer().getPluginManager().registerEvents(new AntiCussListener(this), this); //error on new AntiCussListener()
-		getCommand("anticuss").setExecutor(new AntiCussCommandExecutor(this));
+		getServer().getPluginManager().registerEvents(new AntiCussListener(this), this);
+		getCommand("anticuss").setExecutor(new AntiCussCommand(this));
+		getCommand("acreload").setExecutor(new Reload(this));
+		getCommand("clearchat").setExecutor(new Clear(this));
 	}
 	
 	public void onDisable() {

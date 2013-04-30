@@ -1,5 +1,5 @@
 name: AntiCuss
-version: 1.5
+version: 1.6
 main: me.compressions.anticuss.AntiCuss
 author: Compressions
 description: Blocks cuss words!
@@ -8,6 +8,12 @@ commands:
     anticuss:
         usage: /<command>
         description: AntiCuss commands!
+    clearchat:
+        usage: /<command>
+        description: Clears chat!
+    acreload:
+        usage: /<command>
+        description: Reloads AntiCuss config!
 
 permissions:
     anticuss.reload:

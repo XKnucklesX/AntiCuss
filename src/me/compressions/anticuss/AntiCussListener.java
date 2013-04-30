@@ -8,9 +8,9 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class AntiCussListener implements Listener {
 	
-	private AntiCuss plugin;
-	public AntiCussListener(AntiCuss plugin) {
-		this.plugin = plugin;
+	public AntiCuss plugin;
+	public AntiCussListener(AntiCuss instance) {
+		plugin = instance;
 	}
 
 	@EventHandler
