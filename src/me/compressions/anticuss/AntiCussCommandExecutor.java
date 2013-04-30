@@ -19,9 +19,7 @@ public class AntiCussCommandExecutor implements CommandExecutor {
 		Player p = (Player) sender;
 		if(cmd.getName().equalsIgnoreCase("anticuss")) {
 			if(args.length == 0) {
-				p.sendMessage(ChatColor.GRAY + "Commands:");
-				p.sendMessage(ChatColor.GRAY + "/anticuss reload : Reloads config!");
-				p.sendMessage(ChatColor.GRAY + "/anticuss clear : Clears chat!");
+				p.sendMessage(ChatColor.GRAY + "/anticuss reload");
 			} if(args.length == 1 && args[0].equalsIgnoreCase("reload")) {
 				if(!p.hasPermission("anticuss.reload")) {
 					p.sendMessage(ChatColor.RED + "Insufficient permissions!");
@@ -31,18 +29,6 @@ public class AntiCussCommandExecutor implements CommandExecutor {
 						plugin.saveConfig();
 						p.sendMessage(ChatColor.GREEN + "Config reloaded!");
 					}
-					if(args.length == 1 && args[0].equalsIgnoreCase("clear")) {
-						if(!p.hasPermission("anticuss.clear")) {
-							p.sendMessage(ChatColor.RED + "Insufficient permissions!");
-						} else {
-							if(p.hasPermission("anticuss.clear")) {
-								for(int i = 1; i <= 100; i++) {
-									p.sendMessage("");
-								}
-							}
-						}
-					}
-					
 				}
 			
 			}
