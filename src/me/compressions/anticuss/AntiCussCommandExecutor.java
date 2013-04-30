@@ -25,16 +25,13 @@ public class AntiCussCommandExecutor implements CommandExecutor {
 			} if(args.length == 1 && args[0].equalsIgnoreCase("reload")) {
 				if(!p.hasPermission("anticuss.reload")) {
 					p.sendMessage(ChatColor.RED + "Insufficient permissions!");
-				} else {
-					if(p.hasPermission("anticuss.reload")) {
+				} else if(p.hasPermission("anticuss.reload")) {
 						plugin.reloadConfig();
 						plugin.saveConfig();
 						p.sendMessage(ChatColor.GREEN + "Config reloaded!");
-					} if(args.length == 1 && args[0].equalsIgnoreCase("clear")) {
+					} if(cmd.getName().equalsIgnoreCase("anticuss") && args.length == 1 && args[0].equalsIgnoreCase("clear")) {
 						p.sendMessage("DEBUG");
 			
-			
-					}
 			
 				}		
 		
