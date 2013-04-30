@@ -36,6 +36,5 @@ public class AntiCussListener implements Listener {
 			}
 
 		}
-	
-	}
+}
 	
