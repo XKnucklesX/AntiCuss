@@ -35,9 +35,11 @@ public class AntiCussCommandExecutor implements CommandExecutor {
 							p.sendMessage(ChatColor.RED + "Insufficient permissions!");
 						} else {
 							if(p.hasPermission("anticuss.clear")) {
+								p.sendMessage("Debug");
 								for(int msgs = 1; msgs <= 100; msgs++) {
 									p.sendMessage("");
 								}
+								
 							}
 						}
 					}
