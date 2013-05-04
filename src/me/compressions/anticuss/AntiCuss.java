@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class AntiCuss extends JavaPlugin {
 
-	//testf
+	//testfg
 	public void onEnable() {
 		getLogger().info("AntiCuss enabled!");
 		getConfig().options().copyDefaults(true);
