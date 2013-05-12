@@ -15,3 +15,5 @@ cusswords:
   - douches
 warnmessage: Don't cuss!
 kickmessage: You were kicked for cussing!
+replace: true
+replaceWith: chicken

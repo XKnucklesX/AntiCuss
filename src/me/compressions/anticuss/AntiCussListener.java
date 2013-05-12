@@ -29,6 +29,13 @@ public class AntiCussListener implements Listener {
 					e.setCancelled(true);
 					String kickmessage = plugin.getConfig().getString("kickmessage");
 					e.getPlayer().kickPlayer(ChatColor.RED + kickmessage);
+						} else {
+							if(plugin.getConfig().getBoolean("replace") == false && plugin.getConfig().getStringList("cusswords").contains(word)) {
+								//nothing
+							} else if(plugin.getConfig().getBoolean("replace") == true && plugin.getConfig().getStringList("cusswords").contains(word)) {
+								e.setCancelled(true);
+								e.getPlayer().chat(plugin.getConfig().getString("replaceWith"));
+							}
 						}
 					}
 				}
