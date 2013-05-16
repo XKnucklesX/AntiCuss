@@ -1,0 +1,36 @@
+name: AntiCuss
+version: 1.6
+main: me.compressions.anticuss.AntiCuss
+author: Compressions
+description: Blocks cuss words!
+
+commands:
+    anticuss:
+        usage: /<command>
+        description: AntiCuss commands!
+    clearchat:
+        usage: /<command>
+        description: Clears chat!
+    acreload:
+        usage: /<command>
+        description: Reloads AntiCuss config!
+    mutechat:
+        usage: /<command>
+        description: Mutes all players!
+
+permissions:
+    anticuss.reload:
+        description: Permission to reload config!
+        default: op
+    anticuss.bypass:
+        description: Permission to bypass cuss word blocking!
+        default: op
+    anticuss.kick:
+        description: Permission to kick player!
+        default: false
+    anticuss.clear:
+        description: Permission to clear chat!
+        default: op
+    anticuss.mute:
+        description: Permission to mute chat!
+        default: op
