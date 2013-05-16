@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class AntiCuss extends JavaPlugin {
 	
 	public boolean muted;
-
+	//test
 	//testf
 	public void onEnable() {
 		getLogger().info("AntiCuss enabled!");
@@ -21,10 +21,7 @@ public class AntiCuss extends JavaPlugin {
 		getCommand("acreload").setExecutor(new Reload(this));
 		getCommand("clearchat").setExecutor(new Clear(this));
 		getCommand("mutechat").setExecutor(new Mute(this));
-<<<<<<< HEAD
 		getCommand("mutechat").setExecutor(new Clear(this));
-=======
->>>>>>> d70321a6782ae59e27f3e16aedc4a2c34a71deab
 	}
 	
 	public void onDisable() {
