@@ -14,6 +14,9 @@ commands:
     acreload:
         usage: /<command>
         description: Reloads AntiCuss config!
+    mutechat:
+        usage: /<command>
+        description: Mutes all players!
 
 permissions:
     anticuss.reload:
@@ -27,4 +30,7 @@ permissions:
         default: false
     anticuss.clear:
         description: Permission to clear chat!
+        default: op
+    anticuss.mute:
+        description: Permission to mute chat!
         default: op

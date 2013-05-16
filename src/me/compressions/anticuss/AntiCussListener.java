@@ -43,5 +43,11 @@ public class AntiCussListener implements Listener {
 			}
 
 		}
-}
 	
+	@EventHandler
+	public void onPlayerMute(AsyncPlayerChatEvent e) {
+		if(plugin.muted = true) {
+			e.setCancelled(true);
+		} 
+	}
+}
