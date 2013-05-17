@@ -3,6 +3,7 @@ version: 1.6
 main: me.compressions.anticuss.AntiCuss
 author: Compressions
 description: Blocks cuss words!
+softdepend: [Vault]
 
 commands:
     anticuss:
