@@ -29,37 +29,27 @@ public class AntiCussListener implements Listener {
 				int cost = plugin.getConfig().getInt("cost");
 				if(cost == 0) {			
 				} else if(cost > 0) {
-					EconomyResponse cussr = AntiCuss.econ.depositPlayer(e.getPlayer().getName(), cost);
+					EconomyResponse cussr = AntiCuss.econ.withdrawPlayer(e.getPlayer().getName(), cost);
 					if(cussr.transactionSuccess()) {
-						e.getPlayer().sendMessage(ChatColor.RED + "You were charged " + cost + " for cussing!");
+						e.getPlayer().sendMessage(ChatColor.RED + "You were charged $" + cost + " for cussing!");
 					} else {
 						e.getPlayer().sendMessage(ChatColor.RED + "An error occurred!");
-					}
-				}
-			} else {
-				if(e.getPlayer().hasPermission("anticuss.kick") && plugin.getConfig().getStringList("cusswords").contains(word)) {
-					e.setCancelled(true);
-					String kickmessage = plugin.getConfig().getString("kickmessage");
-					e.getPlayer().kickPlayer(ChatColor.RED + kickmessage);
-						} else {
-							if(plugin.getConfig().getBoolean("replace") == false && plugin.getConfig().getStringList("cusswords").contains(word)) {
-								//nothing
-							} else if(plugin.getConfig().getBoolean("replace") == true && plugin.getConfig().getStringList("cusswords").contains(word)) {
-								e.setCancelled(true);
-								e.getPlayer().chat(plugin.getConfig().getString("replaceWith"));
-							}
-						}
-					}
-				}
+					        }
+				        }
+				
+				    }
+			    }
 
 			}
 
 		}
 	
-	@EventHandler
+	/*@EventHandler
 	public void onPlayerMute(AsyncPlayerChatEvent e) {
 		if(plugin.muted = true) {
 			e.setCancelled(true);
-		} 
-	}
+		} else if(plugin.muted = false) {
+		    return;
+		}
+	}*/
 }

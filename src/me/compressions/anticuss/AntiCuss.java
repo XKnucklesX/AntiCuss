@@ -1,9 +1,7 @@
 package me.compressions.anticuss;
 
-
 import me.compressions.anticuss.commands.AntiCussCommand;
 import me.compressions.anticuss.commands.Clear;
-import me.compressions.anticuss.commands.Mute;
 import me.compressions.anticuss.commands.Reload;
 import net.milkbowl.vault.economy.Economy;
 
@@ -27,8 +25,7 @@ public static Economy econ = null;
     }
 	
 	public boolean muted = false;
-	//test
-	//testf
+
 	public void onEnable() {
 		getLogger().info("AntiCuss enabled!");
 		getConfig().options().copyDefaults(true);
@@ -37,7 +34,6 @@ public static Economy econ = null;
 		getCommand("anticuss").setExecutor(new AntiCussCommand(this));
 		getCommand("acreload").setExecutor(new Reload(this));
 		getCommand("clearchat").setExecutor(new Clear(this));
-		getCommand("mutechat").setExecutor(new Mute(this));
 		getCommand("mutechat").setExecutor(new Clear(this));
 		
 		if (!setupEconomy() ) {
