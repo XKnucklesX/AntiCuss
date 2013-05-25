@@ -16,3 +16,6 @@ cusswords:
 warnmessage: Don't cuss!
 kickmessage: You were kicked for cussing!
 cost: 100
+chatOnMessage: Chat has been enabled!
+chatOffMessage: Chat has been disabled!
+cancelChatMessage: You can't talk while the chat is disabled!
