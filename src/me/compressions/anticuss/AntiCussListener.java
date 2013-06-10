@@ -4,6 +4,7 @@ package me.compressions.anticuss;
 import net.milkbowl.vault.economy.EconomyResponse;
 
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -15,7 +16,6 @@ public class AntiCussListener implements Listener {
 		plugin = instance;
 	}
 	
-	//TODO: charge players for cussing
 	@EventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent e) {
 		for(String word : e.getMessage().toLowerCase().split(" ")) {
@@ -26,9 +26,13 @@ public class AntiCussListener implements Listener {
 				e.setCancelled(true);
 				String warnmessage = plugin.getConfig().getString("warnmessage");
 				e.getPlayer().sendMessage(ChatColor.RED + warnmessage);
+				if(plugin.getConfig().getBoolean("killOnCurse")) {
+				    e.getPlayer().setHealth(0);
+				    String killMsg = plugin.getConfig().getString("killMessage");
+				    e.getPlayer().sendMessage(ChatColor.RED + killMsg);
+				}
 				int cost = plugin.getConfig().getInt("cost");
-				if(cost == 0) {			
-				} else if(cost > 0) {
+				if(cost > 0) {
 					EconomyResponse cussr = AntiCuss.econ.withdrawPlayer(e.getPlayer().getName(), cost);
 					if(cussr.transactionSuccess()) {
 						e.getPlayer().sendMessage(ChatColor.RED + "You were charged $" + cost + " for cussing!");
@@ -44,12 +48,28 @@ public class AntiCussListener implements Listener {
 
 		}
 	
-	/*@EventHandler
-	public void onPlayerMute(AsyncPlayerChatEvent e) {
-		if(plugin.muted = true) {
-			e.setCancelled(true);
-		} else if(plugin.muted = false) {
-		    return;
-		}
-	}*/
+	@EventHandler
+	public void onAsyncPlayerChat(AsyncPlayerChatEvent e) {
+	    Player player = e.getPlayer();
+	    String message = e.getMessage();
+	    if(!player.hasPermission("anticuss.bypass")) {
+	        int caps = 0;
+	        for(int i = 0; i < message.length(); i++) {
+	            if(Character.isUpperCase(message.charAt(i))) {
+	                caps++;
+	            }
+	        } try {
+	        
+	        int iPercent = plugin.getConfig().getInt("capsPercentage");
+	        
+	        if((1.*caps / message.length()) * 100 > iPercent) {
+	            e.setCancelled(true);
+	            player.sendMessage(ChatColor.RED + "You used too many caps in that chat message.");
+	            }
+	        } catch(ArithmeticException ae) {
+	            System.out.println("Message had a length of 0 :(");
+	        }
+	    }
+	}
+	
 }

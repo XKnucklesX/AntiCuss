@@ -23,8 +23,10 @@ public class AntiCussCommand implements CommandExecutor {
 			if(cmd.getName().equalsIgnoreCase("anticuss")) {
 				if(args.length == 0) {
 					p.sendMessage(ChatColor.GRAY + "Commands:");
+					p.sendMessage(ChatColor.GRAY + "/anticuss : Help screen!");
 					p.sendMessage(ChatColor.GRAY + "/acreload : Reloads AntiCuss config!");
 					p.sendMessage(ChatColor.GRAY + "/clearchat : Clears chat!");
+					p.sendMessage(ChatColor.GRAY + "/chat [on/off] : Toggles chat!");
 				}
 			}
 		}

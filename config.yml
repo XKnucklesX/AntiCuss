@@ -19,3 +19,6 @@ cost: 100
 chatOnMessage: Chat has been enabled!
 chatOffMessage: Chat has been disabled!
 cancelChatMessage: You can't talk while the chat is disabled!
+killOnCurse: false
+killMessage: You were killed for cussing!
+capsPercentage: 75
